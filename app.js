@@ -445,6 +445,7 @@ app.post('/api/ana', function(req, res) {
 
 function processChatMessage(req, res) {
     chatbot.sendMessage(req, function(err, data) {
+    	console.log("testing log0");
         if (err) {
             console.log("Error in sending message: ", err);
             res.status(err.code || 500).json(err);
@@ -476,6 +477,7 @@ function processChatMessage(req, res) {
 				emailjs.init("user_eSUvGpcXj4UpjHZX41UKD");
 				emailjs.send("default_service","test",{});
 			  }
+			  console.log("testing log2");
             if (context.claim_step === "verify") {
                 var claimFile = {
                     date: null,
