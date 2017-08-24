@@ -23,7 +23,8 @@
     "passport": "~0.3.2",
     "passport-local": "~1.0.0",
     "request": "2.81.0",
-    "watson-developer-cloud": "2.27.1"
+    "watson-developer-cloud": "2.27.1",
+    "emailjs-com": "latest"
   },
   "repository": {
     "type": "git",

@@ -12,6 +12,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var request = require('request');
 var io = require('socket.io')();
+var emailjs = require('emailjs-com');
 var watson = require('watson-developer-cloud');
 
 require('./config/passport')(passport);
@@ -469,6 +470,11 @@ function processChatMessage(req, res) {
             var owner = req.user.username;
 
             // File a claim for the user
+              if (context.email == "yes")
+			  {
+				emailjs.init("user_eSUvGpcXj4UpjHZX41UKD");
+				emailjs.send("default_service","test",{});
+			  }
             if (context.claim_step === "verify") {
                 var claimFile = {
                     date: null,
